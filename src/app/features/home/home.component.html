@@ -1,0 +1,35 @@
+<div class="container py-5">
+  <div class="row">
+    <div class="col">
+      <div class="jumbotron">
+        <h1>Calculate app</h1>
+        <p>Provide two variables to get result of <small>a + a * a – b + b * b</small></p>
+        <form (ngSubmit)="calculateResult(mathForm)" #mathForm="ngForm" novalidate>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label for="a">Value a</label>
+                <input 
+                  type="text" class="form-control" name="a" id="a" ngModel 
+                  #a="ngModel" [pattern]="valuePattern" required>
+                  <div class="invalid" *ngIf="a.touched && !a.valid ">Please enter the valid number</div> 
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="b">Value b</label>
+                <input type="text" class="form-control" name="b" id="b" ngModel 
+                  #b="ngModel" [pattern]="valuePattern" required>
+                  <div class="invalid" *ngIf="b.touched && !b.valid ">Please enter the valid number</div> 
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" [disabled]="!mathForm.valid" class="btn btn-success">Calculate</button>
+          <p class="mt-3">Result: {{ result }}</p>
+          </form>
+          <app-result-array [list]="arrayItems" [result] = "result"></app-result-array>
+      </div>
+    </div>
+  </div>
+</div>

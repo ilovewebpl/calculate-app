@@ -1,0 +1,6 @@
+<div class="alert alert-danger" *ngIf="isLessThanZero">Result is 0 or less.</div>
+<ul class="list-unstyled" *ngIf="!isLessThanZero">
+  <li *ngFor="let item of list; trackBy: index; index as index">
+    $index: {{index}}
+  </li>
+</ul>

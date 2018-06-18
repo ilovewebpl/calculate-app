@@ -1,0 +1,16 @@
+@import 'variables';
+@import '~bootstrap/scss/bootstrap';
+@import '~bootstrap/scss/mixins';
+
+
+body {
+    color: #333;
+}
+
+.jumbotron { 
+    box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.17);
+}
+
+.invalid {
+    color: red;
+}
